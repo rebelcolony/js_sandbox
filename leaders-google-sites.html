@@ -1,0 +1,112 @@
+<!DOCTYPE html><html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/f9bfe51545.js" crossorigin="anonymous"></script>
+  <style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 50%; /* Full width */
+    height: 50%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #myBtn {
+    border: 0;
+    padding: 0;
+    background-color: white;;
+  }
+
+  .icon {
+    color:goldenrod;
+  }
+
+  </style>
+</head>
+<body>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" href="#myModal">
+  <i class="far fa-gem icon"></i>
+</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="paragraphContent">
+      Congratulations! You are a winner! You have successfully unlocked the Gett treasure chest.
+      Please see a member of the HR Team for your special gem. Your unique code is: </p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// 
+var planets = ["AAS", "ANS", "APL", "ASP", "Abt", "Aci", "Ada", "Ahn", "Aho", "Ako", "Alu", "Amy", "Ani", "Ara", "Ash", "Ask", "Ate", "Aue", "Awa", "BAM", "Bal", "Bej", "Bok", "Bro", "Bus", "CAS", "CCD", "Caz", "Coe", "Cox", "Cuk", "DAO", "DNA", "Dix", "Doi", "Dow", "EMP", "ESA", "Edo", "Eos", "Erb", "Eri", "Eva", "Fan", "Fay", "Fey", "Foo", "Fox", "Fro", "Fry", "GNU", "GOI", "Gal", "Gio", "Glo", "Guo", "Hal", "Hay", "Hel", "Hus", "IAU", "ISO", "ITA", "Iba", "Ida", "Iga", "Ike", "Ino", "Io", "Ipf", "Isa", "Iva", "Iye", "Izu", "JPL", "Jas", "Jos", "Ko", "LPL", "Lai", "Lau", "Lee", "Lem", "Li", "Lie", "Liu", "Lub", "Luu", "MIT", "MPC", "Mak", "May", "Mie", "Moa", "Moe", "NOT", "Nao", "Nha", "Nut", "Nye", "Nyx", "ORO", "Ob", "Obi", "Obu", "Oda", "Ohm", "Oia", "Oja", "Oka", "Ola", "Ops", "Ots", "Owa", "Oya", "Oye", "Oze", "Pan", "Pax", "Pia", "Poe", "Puy", "Rem", "Rey", "Rip", "Rix", "Roe", "Rou", "Roy", "SNO", "Sax", "Sif", "Sor", "Sy", "Tea", "The", "Ti", "Tyr", "Ube", "Ufa", "Ul", "Ulm", "Una", "Ur", "Ute", "VOC", "Vet", "Viv", "Wil", "Wu", "Ybl", "Yen", "Yes", "Yim", "Yip", "Zao"];
+paragraphContent.innerHTML += planets[Math.floor(Math.random()*planets.length)];
+
+</script>
+</body>
+</html>
